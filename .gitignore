@@ -1,0 +1,296 @@
+# ============================================================================
+# SwissClim Data Processing Scripts - Global .gitignore
+# ============================================================================
+
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+# ============================================================================
+venv/
+ENV/
+env/
+.venv
+virtualenv/
+.conda/
+conda-env/
+
+# IDE & Editors
+# ============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Jupyter Notebook
+# ============================================================================
+.ipynb_checkpoints
+*.ipynb
+!examples/**/*.ipynb  # Allow example notebooks in examples/ folders
+
+# Data Files (Large - exclude from git)
+# ============================================================================
+# NetCDF files
+*.nc
+*.nc4
+
+# NumPy files
+*.npy
+*.npz
+!**/data/*.npz  # Allow small metadata NPZ files in data/ folders
+
+# CSV files
+*.csv
+!**/data/*.csv  # Allow small metadata CSV files in data/ folders
+!**/examples/*.csv  # Allow example CSV files
+
+# JSON data files (large)
+*.json
+!**/config/*.json  # Allow config files
+!**/data/*.json  # Allow small metadata JSON files in data/ folders
+!**/examples/*.json  # Allow example JSON files
+!package.json  # Allow package.json if used
+!tsconfig.json  # Allow TypeScript config if used
+
+# HDF5 files
+*.h5
+*.hdf5
+*.he5
+
+# Zarr stores
+*.zarr/
+zarr_data/
+
+# Parquet files
+*.parquet
+*.pq
+
+# Pickle files
+*.pkl
+*.pickle
+
+# GRIB files
+*.grib
+*.grb
+*.grib2
+
+# Binary data
+*.dat
+*.bin
+
+# Compressed archives
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+
+# Images & Videos (if generated)
+# ============================================================================
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.svg
+*.mp4
+*.avi
+*.mov
+!**/docs/**/*.png  # Allow documentation images
+!**/examples/**/*.png  # Allow example images
+!**/assets/**/*.png  # Allow asset images
+
+# Output Directories
+# ============================================================================
+# Common output folders
+output/
+outputs/
+results/
+data/processed/
+data/raw/
+data/interim/
+tmp/
+temp/
+cache/
+.cache/
+
+# Pipeline-specific outputs
+station_data/
+weather_data/
+ESFM_Dataset/
+coverage_plots/
+!coverage_plots/.gitkeep  # Allow keeping empty folder with .gitkeep
+
+# Model & Checkpoints
+# ============================================================================
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+checkpoints/
+models/
+saved_models/
+trained_models/
+!models/.gitkeep  # Allow keeping folder structure
+
+# Logs & Monitoring
+# ============================================================================
+*.log
+logs/
+*.log.*
+tensorboard/
+mlruns/
+wandb/
+.mlflow/
+
+# Testing & Coverage
+# ============================================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Documentation Build
+# ============================================================================
+docs/_build/
+docs/.doctrees/
+site/
+_site/
+
+# Temporary Files
+# ============================================================================
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+~*
+.~*
+
+# System Files
+# ============================================================================
+.directory
+.Trash-*
+
+# Environment Variables
+# ============================================================================
+.env
+.env.local
+.env.*.local
+*.env
+
+# Slurm & HPC
+# ============================================================================
+slurm-*.out
+*.sbatch.log
+core.*
+
+# Database
+# ============================================================================
+*.db
+*.sqlite
+*.sqlite3
+
+# R (if used)
+# ============================================================================
+.Rhistory
+.RData
+.Rproj.user
+
+# Git
+# ============================================================================
+*.orig
+
+# Specific Exclusions (Override above rules)
+# ============================================================================
+# Allow small metadata files in data/ folders
+!**/data/meta_info.json
+!**/data/*mapping*.json
+!**/data/*stats*.json
+!**/data/*grid*.npz
+!**/data/*holdout*.json
+
+# Allow config files
+!**/config/**/*.json
+!**/config/**/*.yaml
+!**/config/**/*.yml
+
+# Allow example files
+!**/examples/**/*.csv
+!**/examples/**/*.json
+!**/examples/**/*.png
+
+# Allow documentation
+!**/docs/**/*.png
+!**/docs/**/*.jpg
+!README.md
+!**/README.md
+!LICENSE
+!**/LICENSE
+
+# Notes
+# ============================================================================
+# This .gitignore is designed for data processing pipelines.
+# Each sub-pipeline may have additional .gitignore rules in their directories.

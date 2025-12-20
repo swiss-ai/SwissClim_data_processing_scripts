@@ -1,0 +1,53 @@
+{
+  "data_download": {
+    "output_dir": "station_data/raw_data",
+    "date_range": {
+      "start": "2000-01-01",
+      "end": "2024-12-31"
+    }
+  },
+  "build_yearly": {
+    "nc_folder": "station_data/raw_data",
+    "mapping_json": "data/final_results_mapping_90x180.json",
+    "stats_json": "data/weather_data_norm_stats.json",
+    "grid_npz": "data/final_results_station_grid_90x180.npz",
+    "out_prefix": "weather_data",
+    "pattern": "*.nc",
+    "time_threshold": 15,
+    "batch_size": 200,
+    "workers": 48,
+    "use_memmap": false,
+    "start_year": null,
+    "end_year": null
+  },
+  "merge_yearly": {
+    "input_pattern": "weather_data_*.npz",
+    "output_file": "weather_data_all.npz"
+  },
+  "convert_hybrid": {
+    "input_npz": "weather_data_all.npz",
+    "output_data_npy": "stations_11k_var9_data.npy",
+    "output_meta_npz": "stations_11k_var9_meta.npz"
+  },
+  "select_holdout": {
+    "coverage_csv": "station_coverage_2023.csv",
+    "mapping_json": "data/final_results_mapping_90x180.json",
+    "n_holdout": 1000,
+    "min_coverage": 40.0,
+    "out_json": "data/final_holdout_mapping_90x180.json",
+    "sampling_method": "uniform",
+    "random_state": 42
+  },
+  "create_mask": {
+    "holdout_json": "data/final_holdout_mapping_90x180.json",
+    "out_npz": "holdout_mask.npz",
+    "grid_h": 90,
+    "grid_w": 180
+  },
+  "split_dataset": {
+    "data_npy": "stations_11k_var9_data.npy",
+    "meta_npz": "stations_11k_var9_meta.npz",
+    "holdout_mask": "holdout_mask.npz",
+    "out_dir": "ESFM_Dataset"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "variables": [
+    "air_pressure",
+    "air_pressure_at_sea_level",
+    "air_temperature",
+    "dew_point_temperature",
+    "time_shift",
+    "u_wind",
+    "v_wind",
+    "wind_from_direction",
+    "wind_speed"
+  ],
+  "locations": {
+    "air_pressure": 97682.0,
+    "air_pressure_at_sea_level": 101453.96875,
+    "air_temperature": 285.3147277832031,
+    "dew_point_temperature": 279.3646240234375,
+    "time_shift": -1.698114275932312,
+    "u_wind": 0.2814367115497589,
+    "v_wind": 0.14645281434059143,
+    "wind_from_direction": 190.44912719726562,
+    "wind_speed": 3.431304931640625
+  },
+  "scales": {
+    "air_pressure": 5179.740234375,
+    "air_pressure_at_sea_level": 2552.779052734375,
+    "air_temperature": 12.051135063171387,
+    "dew_point_temperature": 11.322795867919922,
+    "time_shift": 3.4354941844940186,
+    "u_wind": 3.38703989982605,
+    "v_wind": 3.4132816791534424,
+    "wind_from_direction": 104.95628356933594,
+    "wind_speed": 2.8548741340637207
+  },
+  "counts": {
+    "air_pressure": 825178567,
+    "air_pressure_at_sea_level": 701207528,
+    "air_temperature": 1534770207,
+    "dew_point_temperature": 1269729049,
+    "time_shift": 5949081131,
+    "u_wind": 728224590,
+    "v_wind": 728224590,
+    "wind_from_direction": 728626715,
+    "wind_speed": 889569065
+  },
+  "time_threshold_minutes": 15,
+  "batch_size": 200,
+  "workers": 48
+}
